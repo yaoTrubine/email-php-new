@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>定制开发需求</title>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css">
+	<script src="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://cdn.bootcss.com/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css">
+	<link rel="stylesheet" href="css/customer.css">
+	<script>
+		$(function(){
+			$('form').bootstrapValidator({
+				message: 'This value is not valid',
+				　feedbackIcons: {
+					　　　　　　　　valid: 'glyphicon glyphicon-ok',
+					　　　　　　　　invalid: 'glyphicon glyphicon-remove',
+					　　　　　　　　validating: 'glyphicon glyphicon-refresh'
+				　　　　　　　　   },
+				fields: {
+					name: {
+						 validators: {
+							notEmpty: {
+								message: '用户名不能为空'
+							}
+						}
+					},
+					email: {
+						validators: {
+							emailAddress: {
+                            message: '邮箱地址格式有误'
+                        	}
+						}
+					},
+					phone: {
+						 validators: {
+							notEmpty: {
+								message: '电话不能为空'
+							}
+						}
+					},
+					company_type: {
+						 validators: {
+							notEmpty: {
+								message: '所属行业不能为空'
+							}
+						}
+					},
+					company_info: {
+						 validators: {
+							notEmpty: {
+								message: '开发需求描述不能为空'
+							}
+						}
+					},
+					deadline: {
+						 validators: {
+							notEmpty: {
+								message: '期望完成时间不能为空'
+							}
+						}
+					},
+					money: {
+						 validators: {
+							notEmpty: {
+								message: '期望完成预算不能为空'
+							}
+						}
+					},
+					company_name: {
+						 validators: {
+							stringLength: {
+								max: 255,
+								message: '字符超出限制'
+							}
+						}
+					},
+					dev_example: {
+						 validators: {
+							stringLength: {
+								max: 255,
+								message: '字符超出限制'
+							}
+						}
+					}
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="form">
+		<div class="container">
+			<form id="form" method="post" action="example.php" enctype="multipart/form-data">
+				<div class="form-group">
+					<label>姓名(必填)</label>
+					<input type="text" name="name" class="form-control" placeholder="姓名">
+				</div>
+				<div class="form-group">
+					<label>电话(必填)</label>
+					<input type="text" name="phone" class="form-control" placeholder="电话">
+				</div>
+				<div class="form-group">
+					<label>邮箱(选填)</label>
+					<input type="email" name="email" class="form-control" placeholder="foo@example.com">
+				</div>
+				<div class="form-group">
+					<label>所属行业(必填)</label>
+					<input type="text" name="company_type" class="form-control" placeholder="所属行业">
+				</div>
+				<div class="form-group">
+					<label>公司名称(选填)</label>
+					<input type="text" name="company_name" class="form-control" placeholder="公司名称">
+				</div>
+				<div class="form-group">
+					<label>开发需求描述(必填)</label>
+					<textarea type="text" name="company_info" class="form-control" placeholder="开发需求描述"></textarea>
+				</div>
+				 <div class="form-group">
+					<label for="exampleInputFile">上传文件(选填)</label>
+					<input type="file" name="file">
+				</div>
+				<div class="form-group">
+					<label>开发参考案例(选填)</label>
+					<input type="text" name="dev_example" class="form-control" placeholder="开发参考案例">
+				</div>
+				<div class="form-group">
+					<label>期望完成时间(必填)</label>
+					<input type="text" name="deadline" class="form-control" placeholder="期望完成时间">
+				</div>
+				<div class="form-group">
+					<label>期望完成预算(必填)</label>
+					<input type="text" name="money" class="form-control" placeholder="期望完成预算">
+				</div>
+				
+				<button type="submit" name="send" class="btn btn-default btn-lg btn-block"><h3>提交</h3></button>
+			</form>
+		</div>
+	</div>
+	
+</body>
+</html>

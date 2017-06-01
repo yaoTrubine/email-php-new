@@ -1,0 +1,27 @@
+h3 {
+    padding: 10px 0;
+    margin: 0;
+}
+.form {
+    background-image: url("../images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+#form {
+    padding-top: 380px;
+    padding-bottom: 50px;
+}
+
+button {
+    margin-top: 50px;
+}
+
+textarea {
+    resize: none;
+}
