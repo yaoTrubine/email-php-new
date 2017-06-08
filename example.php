@@ -15,6 +15,29 @@ $dev_example = $_POST['dev_example'];
 $deadline = $_POST['deadline'];
 $money = $_POST['money'];
 
+//连接mysql
+$con = mysql_connect('localhost','root','8876');
+if(!$con){
+    die('Could not connect:'.mysqli_connect_error());
+}
+mysql_select_db('mail');
+mysql_query("set names utf8");  
+
+//插入数据
+$sql = "INSERT INTO `information` (`id`, `name`, `phone`, 
+        `email`, `company_type`, `company_name`, 
+        `company_info`, `dev_example`, `deadline`, `money`) VALUES (NULL, 
+        '{$name}', '{$phone}', '{$email}', '{$company_type}', '{$company_name}', 
+        '{$company_info}', '{$dev_example}', '{$deadline}', '{$money}')";
+
+if (!mysql_query($sql,$con))
+  {
+  die('Error:'.mysql_error());
+  }
+
+//关闭
+mysql_close($con);
+/*
 try { 
 $mail = new PHPMailer(true); 
 $mail->IsSMTP(); 
@@ -50,4 +73,6 @@ include("success.html");
 } catch (phpmailerException $e) { 
 echo "邮件发送失败：".$e->errorMessage(); 
 } 
+
+*/
  ?>

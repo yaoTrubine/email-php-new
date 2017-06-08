@@ -7,11 +7,29 @@
 	<title>定制开发需求</title>
 	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css">
-	<script src="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+
 	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<script src="https://cdn.bootcss.com/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
 	<link rel="stylesheet" href="https://cdn.bootcss.com/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css">
-	<link rel="stylesheet" href="css/customer.css">
+	<!--<link rel="stylesheet" href="css/style.css">-->
+	<style>
+		.form {padding-top: 80px;padding-bottom: 80px;background: rgba(0, 0, 0, .1);}
+		p {padding: 0;margin: 0;}
+		h1,h3 {padding:0;margin: 0;}
+		.container {max-width: 400px;margin: 0 auto;display: block;}
+		.title {background: #fff;padding: 30px;text-align: center;}
+		.title p {text-align: left;padding: 20px 1.5px 0 1.5px;line-height: 20px;}
+		textarea {resize: none;}
+		.form-control{background: #F2F2F2;}
+		button[type="submit"]{margin-top: 30px;padding: 5px;font-size: 20px;}
+		#form {padding:0 30px 30px 30px; background: #fff;}
+		 @media only screen and (max-width: 900px) {
+			.title {text-align: left;background: none;padding: 0 0 20px 0;}
+            .form { background: url(images/bg.jpg) no-repeat;background-size: 100% 100%; padding-top: 400px;}
+			#form {padding: 0px;background: none;}
+			canvas {display: none;}
+        }
+	</style>
 	<script>
 		$(function(){
 			$('form').bootstrapValidator({
@@ -93,13 +111,21 @@
 	</script>
 </head>
 <body>
+	<script type="text/javascript" color="255,0,0" opacity='0.7' zIndex="-2" count="200" src="src/canvas-nest.js"></script>
 	<div class="form">
 		<div class="container">
+
+			<div class="title">
+				<h1>定制开发需求</h1>
+				<p class="text-muted">为保证技术评估效率、同时节省您的宝贵时间，请您认真填写以下内容（我们将在15-30分钟内给您提供专业的解决方案）：</p>
+			</div>
 			<form id="form" method="post" action="example.php" enctype="multipart/form-data">
+
 				<div class="form-group">
 					<label>姓名(必填)</label>
 					<input type="text" name="name" class="form-control" placeholder="姓名">
 				</div>
+				
 				<div class="form-group">
 					<label>电话(必填)</label>
 					<input type="text" name="phone" class="form-control" placeholder="电话">
@@ -130,15 +156,18 @@
 				</div>
 				<div class="form-group">
 					<label>期望完成时间(必填)</label>
-					<input type="text" name="deadline" class="form-control" placeholder="期望完成时间">
+					<input type="date" name="deadline" class="form-control" placeholder="期望完成时间">
 				</div>
 				<div class="form-group">
 					<label>期望完成预算(必填)</label>
 					<input type="text" name="money" class="form-control" placeholder="期望完成预算">
 				</div>
+				<div class="button">
+					<button type="submit" name="send" class="btn btn-primary btn-xs btn-block">提交</button>
+				</div>
 				
-				<button type="submit" name="send" class="btn btn-default btn-lg btn-block"><h3>提交</h3></button>
 			</form>
+			
 		</div>
 	</div>
 	
