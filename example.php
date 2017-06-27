@@ -37,7 +37,7 @@ if (!mysql_query($sql,$con))
 
 //关闭
 mysql_close($con);
-/*
+
 try { 
 $mail = new PHPMailer(true); 
 $mail->IsSMTP(); 
@@ -74,5 +74,5 @@ include("success.html");
 echo "邮件发送失败：".$e->errorMessage(); 
 } 
 
-*/
+
  ?>

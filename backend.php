@@ -121,7 +121,7 @@
     <hr>
     <table id="tableExcel" class="table clr">
       <tr>
-            <th>ID</th>
+            <!--<th>ID</th>-->
             <th>姓名</th>
             <th>电话</th>
             <th>邮箱</th>
@@ -140,7 +140,6 @@
         echo "<tr>";  
         //打印出$row这一行  
 ?>
-        <td><?php echo $row['id'] ?></td>
         <td><?php echo $row['name'] ?></td>
         <td><?php echo $row['phone'] ?></td>
         <td><?php echo $row['email'] ?></td>
@@ -150,7 +149,7 @@
         <td><?php echo $row['dev_example'] ?></td>
         <td><?php echo $row['deadline'] ?></td>
         <td><?php echo $row['money'] ?></td> 
-        <td><a class="btn btn-danger" href="#" role="button">删除</a></td>  
+        <td><a class="btn btn-danger" href="delete.php?id=<?php echo $row['id'] ?>" role="button">删除</a></td>  
         <?php
         echo "</tr>";  
     } ?>
